@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <EditText
+        android:id="@+id/Numero1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/Numero2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Numero1"
+        android:layout_below="@+id/Numero1"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        android:focusable="false"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="@string/euros"
+        android:layout_alignBaseline="@+id/Numero1"
+        android:layout_alignBottom="@+id/Numero1"
+        android:layout_toEndOf="@+id/Numero1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/usa"
+        android:layout_alignBaseline="@+id/Numero2"
+        android:layout_alignBottom="@+id/Numero2"
+        android:layout_alignStart="@+id/textView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="Convertir"
+        android:layout_below="@+id/radioGroup"
+        android:layout_alignStart="@+id/radioGroup" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/Numero2"
+        android:layout_alignStart="@+id/Numero2">
+
+        <RadioButton
+            android:id="@+id/checkEuro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/Numero2"
+            android:checked="true"
+            android:layout_weight="1"
+            android:text="@string/eau" />
+
+        <RadioButton
+            android:id="@+id/checkUsa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/checkEuro"
+            android:layout_centerHorizontal="true"
+
+            android:layout_weight="1"
+            android:text="@string/uae" />
+    </RadioGroup>
+
+
+
+
+</RelativeLayout>
