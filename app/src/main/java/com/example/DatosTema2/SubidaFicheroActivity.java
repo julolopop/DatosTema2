@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -25,7 +26,7 @@ public class SubidaFicheroActivity extends AppCompatActivity implements View.OnC
     private EditText edtRuta;
     private Button btnSubir;
     private Button btnExplorar;
-    private File file;
+    private TextView txvresultado;
     private static final int ABRIRFICHERO_REQUEST_CODE = 1;
     public final static String WEB = "http://alumno.mobi/~alumno/superior/diaz/upload.php";
 
@@ -35,6 +36,7 @@ public class SubidaFicheroActivity extends AppCompatActivity implements View.OnC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subida_fichero);
         edtRuta = (EditText) findViewById(R.id.edtRuta);
+        txvresultado =(TextView) findViewById(R.id.txvresultado);
         btnSubir = (Button) findViewById(R.id.btnSubir);
         btnSubir.setOnClickListener(this);
         btnExplorar = (Button) findViewById(R.id.btnExplorar);
@@ -97,8 +99,8 @@ public class SubidaFicheroActivity extends AppCompatActivity implements View.OnC
 
                 @Override
                 public void onSuccess(int statusCode, Header[] headers, String responseString) {
-                    progreso.setMessage("Imagen subida");
-                    Toast.makeText(SubidaFicheroActivity.this,"Imagen subida",Toast.LENGTH_SHORT);
+                    txvresultado.setText(responseString);
+                    Toast.makeText(SubidaFicheroActivity.this,responseString,Toast.LENGTH_SHORT);
                     progreso.dismiss();
                 }
             });
